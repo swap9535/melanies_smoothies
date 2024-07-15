@@ -1,5 +1,6 @@
 # Import python packages
 import streamlit as st
+from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 import requests
 import pandas as pd
@@ -27,7 +28,7 @@ ingredients_list = st.multiselect(
     "Choose upto 5 ingredients:"
     , my_dataframe    
     , max_selections = 5
-)
+    )
 
 if ingredients_list:
     ingredients_string = ''
